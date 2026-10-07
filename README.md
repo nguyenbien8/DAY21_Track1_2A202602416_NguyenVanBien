@@ -1,7 +1,7 @@
 # Lab 21 — Phân tích rủi ro AI qua case study thực tế
 
-- Họ và tên: Nguyen Van Bien
-- MSSV / mã học viên: 2A202602416
+- Họ và tên: Nguyễn Văn Biển
+- Mã học viên: 2A202602416
 - Lớp: AI Thực Chiến — Track 1
 - Ngành đã chọn: **HR / tuyển dụng** (AI sàng lọc CV, chấm điểm và lọc ứng viên)
 
@@ -57,15 +57,15 @@
 #### Brief Case
 
 - Tổ chức / sản phẩm AI: iTutorGroup (gồm 3 công ty liên kết, cung cấp dạy tiếng Anh trực tuyến cho học viên ở Trung Quốc) — phần mềm xử lý đơn ứng tuyển gia sư.
-- Thời gian, địa điểm / bối cảnh: Năm 2020, tuyển gia sư làm việc từ xa tại Mỹ. EEOC (Ủy ban Cơ hội Việc làm Bình đẳng Mỹ) khởi kiện năm 2022 (EEOC v. iTutorGroup, Inc., et al., Tòa Liên bang Quận Đông New York); thỏa thuận hòa giải công bố 11/9/2023. Đây là vụ dàn xếp đầu tiên của EEOC liên quan đến phân biệt đối xử qua phần mềm tuyển dụng tự động.
+- Thời gian, địa điểm / bối cảnh: Năm 2020, tuyển gia sư làm việc từ xa tại Mỹ. EEOC (Ủy ban Cơ hội Việc làm Bình đẳng Mỹ) khởi kiện năm 2022 (EEOC v. iTutorGroup, Inc., et al., Tòa Liên bang Quận Đông New York); thỏa thuận hòa giải công bố 13/9/2023. Báo chí chuyên ngành mô tả đây là một trong những vụ dàn xếp đầu tiên của EEOC liên quan đến phần mềm tuyển dụng tự động (nhận định của báo chí, không phải của EEOC).
 - AI được dùng để làm gì: Tự động sàng lọc đơn ứng tuyển gia sư.
 - Vấn đề hoặc sự kiện đáng chú ý: **[Sự kiện]** Phần mềm được lập trình để **tự động loại ứng viên nữ từ 55 tuổi trở lên và ứng viên nam từ 60 tuổi trở lên**, vi phạm Luật chống phân biệt tuổi tác trong việc làm (ADEA). Theo các báo cáo về vụ kiện, vụ việc bị phát hiện khi một ứng viên nộp hai hồ sơ giống nhau, chỉ khác ngày sinh — hồ sơ trẻ hơn được mời phỏng vấn.
 - Số liệu có nguồn:
   - **Hơn 200** ứng viên đủ điều kiện ở Mỹ bị loại vì tuổi (EEOC, 2023).
   - Ngưỡng loại tự động: **nữ ≥ 55 tuổi, nam ≥ 60 tuổi** (EEOC).
-  - Tiền dàn xếp: **365.000 USD** chia cho các ứng viên bị loại tự động; EEOC giám sát tuân thủ **ít nhất 5 năm** (EEOC, 11/9/2023).
+  - Tiền dàn xếp: **365.000 USD** chia cho các ứng viên bị loại tự động; EEOC giám sát tuân thủ **ít nhất 5 năm** (EEOC, 13/9/2023).
 - Nguồn:
-  - U.S. EEOC — *iTutorGroup to Pay $365,000 to Settle EEOC Discriminatory Hiring Suit* — 11/9/2023 — https://www.eeoc.gov/newsroom/itutorgroup-pay-365000-settle-eeoc-discriminatory-hiring-suit
+  - U.S. EEOC — *iTutorGroup to Pay $365,000 to Settle EEOC Discriminatory Hiring Suit* — 13/9/2023 — https://www.eeoc.gov/newsroom/itutorgroup-pay-365000-settle-eeoc-discriminatory-hiring-suit
   - Bản tin email chính thức của EEOC (dự phòng): https://content.govdelivery.com/accounts/USEEOC/bulletins/370170c
 - Phân biệt bằng chứng và nhận định:
   - **[Sự kiện]** Quy tắc loại theo tuổi, số >200 ứng viên, 365.000 USD, cam kết đào tạo, chính sách mới và giám sát 5 năm — do EEOC công bố. iTutorGroup dàn xếp và không thừa nhận sai phạm.
@@ -111,7 +111,7 @@
 
 | Trường | Phân tích của tôi |
 | --- | --- |
-| High-risk moment | Ứng viên nộp đơn qua cổng Workday của doanh nghiệp; AI chấm điểm/đề xuất và đơn có thể bị từ chối trước khi recruiter đọc (theo cáo buộc, có trường hợp bị từ chối rất nhanh, ngoài giờ làm việc). |
+| High-risk moment | Ứng viên nộp đơn qua cổng Workday của doanh nghiệp; AI chấm điểm/đề xuất và đơn có thể bị từ chối trước khi recruiter đọc (chi tiết vận hành cụ thể chưa được công bố). |
 | Stakeholder bị ảnh hưởng | Trực tiếp: ứng viên ≥40 tuổi, ứng viên da màu, ứng viên khuyết tật (theo cáo buộc). Gián tiếp: hàng nghìn doanh nghiệp khách hàng của Workday (rủi ro pháp lý, mất ứng viên tốt), Workday (nhà cung cấp — tòa coi có thể chịu trách nhiệm như "agent" của nhà tuyển dụng), thị trường lao động nói chung. |
 | Failure mode | **Bias / fairness** (cáo buộc disparate impact). **Over-reliance**: doanh nghiệp tin điểm/đề xuất của AI để loại hồ sơ hàng loạt. **Escalation failure** (giả thuyết): thiếu bước người thật xem lại trước khi từ chối. |
 | Layer bắt đầu lỗi | **Chưa đủ bằng chứng** — Workday không công bố chi tiết mô hình và vụ án chưa kết thúc. Giả thuyết của tôi: (1) **Model** — học từ dữ liệu quyết định tuyển dụng quá khứ của khách hàng, có thể chứa proxy về tuổi (năm tốt nghiệp, số năm kinh nghiệm); (2) **Safety/UX** — cấu hình cho phép tự động từ chối hoặc ẩn ứng viên điểm thấp khiến recruiter không bao giờ thấy họ. |
